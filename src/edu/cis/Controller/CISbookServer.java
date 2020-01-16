@@ -91,6 +91,9 @@ public class CISbookServer extends ConsoleProgram
         {
             for (CISbookProfile profile : profList)
             {
+                if (profile.getFriends().contains(request.getParam(CISConstants.NAME))) {
+                    profile.removeFriend(request.getParam(CISConstants.NAME));
+                }
                 if (profile.getName().equals(request.getParam(CISConstants.NAME)))
                 {
                     profList.remove(profile);
@@ -162,7 +165,7 @@ public class CISbookServer extends ConsoleProgram
             return CISConstants.PROF_EXIST_ERR;
         }
 
-        //
+        // add friends (big bird nest)
         if (request.getCommand().equals(CISConstants.ADD_FRND))
         {
             for (CISbookProfile profile1 : profList)
@@ -173,17 +176,9 @@ public class CISbookServer extends ConsoleProgram
                     {
                         if (profile2.getName().equals(request.getParam(CISConstants.NAME2)))
                         {
-
-//                            if (profile2.getFriends().contains(profile1.getName()) ||
-//                                    profile1.getFriends().contains(profile2.getName()))
-//                            {
-//                                println( "bruh they already in it");
-//                                return CISConstants.INVALID_FRND;
-//                            }
-//
                             if (profile1.addFriend(profile2.getName()) && profile2.addFriend(profile1.getName()))
                             {
-                                println("prof2 freind are:" + profile2.getFriends());
+                                println("not yet freinds");
                                 return CISConstants.SUCCESS;
                             }
                             if (profile1.getName() == profile2.getName())
@@ -196,6 +191,19 @@ public class CISbookServer extends ConsoleProgram
                 }
             }
             println(CISConstants.PROF_EXIST_ERR);
+            return CISConstants.PROF_EXIST_ERR;
+        }
+
+        //get friends
+        if (request.getCommand().equals(CISConstants.GET_FRND))
+        {
+            for (CISbookProfile profile : profList)
+            {
+                if (profile.getName().equals(request.getParam(CISConstants.NAME)))
+                {
+                    return profile.getFriends().toString();
+                }
+            }
             return CISConstants.PROF_EXIST_ERR;
         }
 

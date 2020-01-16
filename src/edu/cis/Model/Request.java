@@ -89,13 +89,12 @@ public class Request
             //get the parameters for the Request
             String paramStr = requestParts[1];
             String[] paramParts = paramStr.split("&");
-            String[] parts = paramParts;
             int len = paramParts.length;
 
             //get key and values for each part found
             for (int i = 0; i < len; ++i)
             {
-                String paramPart = parts[i];
+                String paramPart = paramParts[i];
                 String key = paramPart.split("=")[0];
                 String value = "";
                 if (paramPart.split("=").length == 2)
@@ -154,7 +153,7 @@ public class Request
     /**
      * create a GET request from this Request object. The GET method is used to retrieve information
      * from the given server using a given URI. Requests using GET should only retrieve data and
-     * should have no other effect on the data.
+     * should have no other effect on the data. Basically turns it into a string.
      *
      * @param
      * @return GET string

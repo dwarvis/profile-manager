@@ -16,9 +16,9 @@ public class CISbookProfile
 
     // your code here
     String name;
-    String image = null;
-    String status = null;
-    ArrayList<String> friends;
+    String image;
+    String status;
+    ArrayList<String> friends = new ArrayList<>();
 
     /**
      * Constructor
@@ -28,6 +28,9 @@ public class CISbookProfile
     public CISbookProfile(String name)
     {
         this.name = name;
+        this.image = null;
+        this.status = "";
+        this.friends = new ArrayList<String>();
     }
 
     /**
@@ -94,6 +97,16 @@ public class CISbookProfile
         friends.add(friend);
         return true;
     }
+
+//    public void addFriend(String friend)
+//    {
+//        // You fill this in.  Currently always returns false.
+//        if (!friends.contains(friend))
+//        {
+//            friends.add(friend);
+//        }
+//
+//    }
 
     /**
      * This method removes the named friend from this profile's list
