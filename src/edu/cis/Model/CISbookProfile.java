@@ -15,7 +15,10 @@ public class CISbookProfile
 {
 
     // your code here
-
+    String name;
+    String image = null;
+    String status = null;
+    ArrayList<String> friends;
 
     /**
      * Constructor
@@ -24,9 +27,7 @@ public class CISbookProfile
      */
     public CISbookProfile(String name)
     {
-        // your code here
-
-
+        this.name = name;
     }
 
     /**
@@ -35,14 +36,14 @@ public class CISbookProfile
     public String getName()
     {
         // You fill this in.  Currently always returns the empty string.
-        return "";
+        return name;
     }
 
 
     public String getImage()
     {
         // You fill this in.  Currently always returns null.
-        return null;
+        return image;
     }
 
     /**
@@ -51,6 +52,7 @@ public class CISbookProfile
     public void setImage(String image)
     {
         // You fill this in.
+        this.image = image;
     }
 
     /**
@@ -61,7 +63,7 @@ public class CISbookProfile
     public String getStatus()
     {
         // You fill this in.  Currently always returns the empty string.
-        return "";
+        return status;
     }
 
     /**
@@ -70,6 +72,7 @@ public class CISbookProfile
     public void setStatus(String status)
     {
         // You fill this in.
+        this.status = status;
     }
 
     /**
@@ -84,7 +87,12 @@ public class CISbookProfile
     public boolean addFriend(String friend)
     {
         // You fill this in.  Currently always returns false.
-        return false;
+        if (friends.contains(friend))
+        {
+            return false;
+        }
+        friends.add(friend);
+        return true;
     }
 
     /**
@@ -98,6 +106,11 @@ public class CISbookProfile
     public boolean removeFriend(String friend)
     {
         // You fill this in.  Currently always returns false.
+        if (friends.contains(friend))
+        {
+            friends.remove(friend);
+            return true;
+        }
         return false;
     }
 
@@ -108,7 +121,7 @@ public class CISbookProfile
     public ArrayList<String> getFriends()
     {
         // You fill this in.  Currently always returns null.
-        return null;
+        return friends;
     }
 
 }

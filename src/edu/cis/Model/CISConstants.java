@@ -3,12 +3,14 @@ package edu.cis.Model;
 public class CISConstants
 {
     //return strings
-    public static final String PROF_EXIST_ERR = "Error: dumb piece of shit.";
+    public static final String PROF_EXIST_ERR = "Error: does not exist.";
+    public static final String PROF_ALRD_EXIST = "Error: Database already contains a profile with name ";
     public static final String PROF_NOTPRES_ERR = "Error: that profile doesn't exist.";
     public static final String INVALID_FRND = "Error: can't add friends";
     public static final String SUCCESS = "success";
     public static final String TRUE_RET = "true";
     public static final String FALSE_RET = "false";
+    public static final String EMPTY = "";
 
     //Parameters for requests
     public static final String NAME = "name";
