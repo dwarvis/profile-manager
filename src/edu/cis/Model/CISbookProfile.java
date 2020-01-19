@@ -98,15 +98,6 @@ public class CISbookProfile
         return true;
     }
 
-//    public void addFriend(String friend)
-//    {
-//        // You fill this in.  Currently always returns false.
-//        if (!friends.contains(friend))
-//        {
-//            friends.add(friend);
-//        }
-//
-//    }
 
     /**
      * This method removes the named friend from this profile's list
