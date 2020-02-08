@@ -13,7 +13,6 @@ import edu.cis.Model.CISbookProfile;
 import edu.cis.Model.Request;
 import edu.cis.Model.SimpleServerListener;
 import edu.cis.Utils.SimpleServer;
-
 import java.util.ArrayList;
 
 public class CISbookServer extends ConsoleProgram
@@ -127,7 +126,6 @@ public class CISbookServer extends ConsoleProgram
         }
         CISbookProfile newProf = new CISbookProfile(request.getParam(CISConstants.NAME));
         profList.add(newProf);
-        println(profList);
         return CISConstants.SUCCESS;
     }
 
